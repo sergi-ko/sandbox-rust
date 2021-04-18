@@ -1,6 +1,13 @@
 use std::iter::FromIterator;
 use std::time::Instant;
 
+/// Notes/TODO:
+///     - run in --release
+///     - try https://crates.io/crates/cargo-criterion
+///     - try https://doc.rust-lang.org/cargo/commands/cargo-bench.html
+///     - try https://doc.rust-lang.org/std/hint/fn.black_box.html
+///     - assembly can be checked here: https://godbolt.org/z/svjjfoxjW
+
 pub struct VecStruct {
     v: Vec<u128>,
 }
@@ -70,7 +77,7 @@ pub fn test_performance() {
     };
 
     let start = Instant::now();
-    for i in (0..99).enumerate() {
+    for i in (0..999_999).enumerate() {
         struct_iter_iter(&vstruct);
     }
 
@@ -78,7 +85,7 @@ pub fn test_performance() {
     println!("struct_iter_iter\t{:?}", duration);
 
     let start = Instant::now();
-    for i in (0..99).enumerate() {
+    for i in (0..999_999).enumerate() {
         struct_iter_clone(&vstruct);
     }
 
@@ -86,7 +93,7 @@ pub fn test_performance() {
     println!("struct_iter_clone\t{:?}", duration);
 
     let start = Instant::now();
-    for i in (0..99).enumerate() {
+    for i in (0..999_999).enumerate() {
         struct_iter_slice(&vstruct);
     }
 
@@ -94,7 +101,7 @@ pub fn test_performance() {
     println!("struct_iter_slice\t{:?}", duration);
 
     let start = Instant::now();
-    for i in (0..99).enumerate() {
+    for i in (0..999_999).enumerate() {
         struct_iter_field(&vstruct.v);
     }
 
