@@ -1,5 +1,5 @@
 [package]
-name = "playground"
+name = "sandbox-rust"
 version = "0.1.0"
 authors = ["skopchalyuk <skopchalyuk@gmail.com>"]
 edition = "2018"
