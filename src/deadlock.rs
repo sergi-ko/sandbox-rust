@@ -3,7 +3,7 @@ use std::thread;
 use std::thread::JoinHandle;
 use std::time;
 
-pub fn do_something() -> &'static str {
+pub fn do_deadlock() -> &'static str {
     let mut threads = vec![];
 
     let res1 = Arc::new(Mutex::new(0));
