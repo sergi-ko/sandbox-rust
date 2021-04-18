@@ -29,11 +29,13 @@ pub fn do_something() -> &'static str {
 
 pub fn run_task1(res1: Arc<Mutex<u8>>, res2: Arc<Mutex<u8>>) -> JoinHandle<()> {
     thread::spawn(move || {
-        let mut task1_res1 = res1.lock().unwrap();
-        *task1_res1 += 1;
         let mut task1_res2 = res2.lock().unwrap();
         *task1_res2 += 1;
+
         thread::sleep(time::Duration::from_millis(2_000));
+
+        let mut task1_res1 = res1.lock().unwrap();
+        *task1_res1 += 1;
         println!("running task1");
     })
 }
@@ -44,7 +46,9 @@ pub fn run_task2(res1: Arc<Mutex<u8>>, res2: Arc<Mutex<u8>>) -> JoinHandle<()> {
         *task1_res1 += 10;
         let mut task1_res2 = res2.lock().unwrap();
         *task1_res2 += 10;
+
         thread::sleep(time::Duration::from_millis(3_000));
+
         println!("running task2");
     })
 }
