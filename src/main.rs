@@ -19,6 +19,6 @@ fn main() {
 
     //    println!("{}", do_deadlock());
 
-    //    do_refcount();
-    test_performance();
+    do_refcount();
+    //   test_performance();
 }
