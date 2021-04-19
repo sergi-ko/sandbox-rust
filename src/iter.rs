@@ -41,7 +41,7 @@ pub fn struct_iter_iter(n: u128, vstruct: &VecStruct) -> u128 {
 }
 
 pub fn struct_iter_clone(n: u128, vstruct: &VecStruct) -> u128 {
-    let mut k = 0;
+    let mut k = 999_999_999;
     for i in vstruct.v.clone() {
         k ^= n + i;
     }
@@ -49,7 +49,7 @@ pub fn struct_iter_clone(n: u128, vstruct: &VecStruct) -> u128 {
 }
 
 pub fn struct_iter_slice(n: u128, vstruct: &VecStruct) -> u128 {
-    let mut k = 0;
+    let mut k = 999_999_999;
     for i in &vstruct.v {
         k ^= n + i;
     }
@@ -57,7 +57,7 @@ pub fn struct_iter_slice(n: u128, vstruct: &VecStruct) -> u128 {
 }
 
 pub fn struct_iter_field(n: u128, v: &Vec<u128>) -> u128 {
-    let mut k = 0;
+    let mut k = 999_999_999;
     for i in v {
         k ^= n + i;
     }
@@ -71,9 +71,9 @@ pub fn struct_iter_field(n: u128, v: &Vec<u128>) -> u128 {
 // struct_iter_field	1.031684125s 999999998
 //
 // (debug, ITERATIONS=9)
-// T.B.D.
+//
 pub fn test_performance() {
-    const ITERATIONS: u128 = 9;
+    const ITERATIONS: u128 = 999;
     let mut input = String::new();
     println!("Testing performance, provide integer number:");
 
