@@ -12,12 +12,6 @@ pub enum Resolution {
 
     Day1 = 1440,
 }
-/*
-impl Ord for Resolution {
-    fn cmp(&self, other: &Self) -> Ordering {
-        (self.value, &self.name).cmp(&(other.value, &other.name))
-    }
-}*/
 
 pub fn enum_and_map() {
     let r = Resolution::Minute1;

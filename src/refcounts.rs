@@ -9,7 +9,7 @@ enum MyTree {
 
 impl MyTree {
     fn left(&self) -> &MyTree {
-        if let MyTree::Leaf(val, l, r) = self {
+        if let MyTree::Leaf(_val, l, _r) = self {
             //Rc::try_unwrap(*l).unwrap()
             l
         } else {
@@ -17,7 +17,7 @@ impl MyTree {
         }
     }
     fn right(&self) -> &MyTree {
-        if let MyTree::Leaf(val, l, r) = self {
+        if let MyTree::Leaf(_val, _l, r) = self {
             //Rc::try_unwrap(*l).unwrap()
             r
         } else {
