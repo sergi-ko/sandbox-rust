@@ -1,4 +1,5 @@
 pub mod deadlock;
+pub mod enums;
 pub mod iter;
 pub mod refcounts;
 pub mod test;
@@ -11,6 +12,8 @@ use crate::test::test2;
 
 use crate::refcounts::do_refcount;
 
+use crate::enums::enum_and_map;
+
 fn main() {
     let s = test1();
     println!("{}", s);
@@ -19,6 +22,7 @@ fn main() {
 
     //    println!("{}", do_deadlock());
 
-    do_refcount();
+    //do_refcount();
     //   test_performance();
+    enum_and_map();
 }
