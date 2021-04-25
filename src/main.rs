@@ -1,3 +1,4 @@
+pub mod binary_heap;
 pub mod deadlock;
 pub mod enums;
 pub mod iter;
@@ -14,6 +15,8 @@ use crate::refcounts::do_refcount;
 
 use crate::enums::enum_and_map;
 
+use crate::binary_heap::test_binary_heap;
+
 fn main() {
     let s = test1();
     println!("{}", s);
@@ -24,5 +27,7 @@ fn main() {
 
     //do_refcount();
     //   test_performance();
-    enum_and_map();
+    //enum_and_map();
+
+    test_binary_heap();
 }

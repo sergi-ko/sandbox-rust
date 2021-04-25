@@ -22,4 +22,12 @@ pub fn enum_and_map() {
     m.insert(Resolution::Hour1, 1020);
 
     println!("{:?}", m);
+    println!("{:?}", r as u16);
+
+    if let Some(x) = m.values_mut().last() {
+        println!("x={}", x);
+    } else {
+        println!("no x");
+    }
+    println!("end");
 }
