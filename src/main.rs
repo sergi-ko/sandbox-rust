@@ -1,6 +1,7 @@
 pub mod binary_heap;
 pub mod deadlock;
 pub mod enums;
+pub mod floating_point;
 pub mod iter;
 pub mod refcounts;
 pub mod test;
@@ -17,6 +18,8 @@ use crate::enums::enum_and_map;
 
 use crate::binary_heap::test_binary_heap;
 
+use crate::floating_point::test_floating_precision;
+
 fn main() {
     let s = test1();
     println!("{}", s);
@@ -29,5 +32,6 @@ fn main() {
     //   test_performance();
     //enum_and_map();
 
-    test_binary_heap();
+    //    test_binary_heap();
+    test_floating_precision();
 }
